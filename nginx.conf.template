@@ -18,6 +18,7 @@ http {
 
     ssl_certificate /etc/letsencrypt/live/DOMAIN/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/DOMAIN/privkey.pem;
+    client_max_body_size CLIENT_MAX_BODY_SIZE;
 
     location / {
       proxy_redirect off;
