@@ -13,7 +13,7 @@ sed -i -e "s/APP_HOST/${APP_HOST}/g" ${NGINX_CONF}
 sed -i -e "s/APP_PORT/${APP_PORT:-80}/g" ${NGINX_CONF}
 
 if [ -z ${CLIENT_MAX_BODY_SIZE} ]; then
-  sed -i -e "s/CLIENT_MAX_BODY_SIZE}/50/g;" ${NGINX_CONF}
+  sed -i -e "s/CLIENT_MAX_BODY_SIZE}/50m/g;" ${NGINX_CONF}
 else
   sed -i -e "s/CLIENT_MAX_BODY_SIZE/${CLIENT_MAX_BODY_SIZE}/g;" ${NGINX_CONF}
 fi
