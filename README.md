@@ -17,13 +17,14 @@ version: '3'
 services:
 
   certfront:
-    image: hoto17296/certfront
+    image: leachjp/certfront
     ports:
       - 80:80
       - 443:443
     environment:
       DOMAIN: blog.example.com  # modify this to your domain
       EMAIL: mail@example.com  # modify this to your email
+      CLIENT_MAX_BODY_SIZE: 200m # nginx's client_max_body_size param. 
       APP_HOST: wordpress
     volumes:
       - certs:/etc/letsencrypt
